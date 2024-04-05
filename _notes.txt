@@ -1,0 +1,43 @@
+acptsock = socket
+fcntl   nonblock
+
+struct sockaddr_in 
+.sin_family = AF_INET
+.sin_addr.s_addr = INADDR_ANY
+.sin_port = htons(port)
+
+bind(acptsock, (cast)& , sizeof( ))
+
+listen(acptsock, 10)
+_____________________________________________
+
+size_t client_count
+int clients[MAX]
+
+fd_set readfds;
+FD_ZERO
+FD_SET
+max_fd
+
+_____________________________________________
+while(1)
+{
+    readfds_copy
+    select(maxfd + 1, &readfds_copy, 0, ...)
+
+    // new client
+    if FD_ISSET(acptsock, &readfds_copy)
+        clntsock = accept(acptsock, 0, ...)
+        FD_SET
+        maxfd = max(clntsock, )
+
+    for clients_count
+        if FD_ISSET
+            char buf
+            recv
+            -1: fatal
+            0: close, FD_CLR, move clients, continue
+            for clients
+                send
+
+}
